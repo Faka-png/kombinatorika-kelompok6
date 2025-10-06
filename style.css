@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #004aad;
+  --secondary: #f8b400;
+  --bg: #fdfdfd;
+  --text: #222;
+  --muted: #555;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary), #002b6b);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  box-shadow: 0 3px 10px var(--shadow);
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.8rem;
+}
+
+header .lead {
+  font-size: 1.1rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #f0f0f0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.8rem 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  border-left: 5px solid var(--secondary);
+  padding-left: 0.6rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+p.muted {
+  color: var(--muted);
+}
+
+.divider {
+  margin: 3rem auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+  position: relative;
+}
+
+.divider::before {
+  left: 0;
+}
+
+.divider::after {
+  right: 0;
+}
+
+code, kbd {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-family: "Courier New", monospace;
+  color: #c7254e;
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .divider::before,
+  .divider::after {
+    width: 25%;
+  }
+}
+
+/* Kalkulator Styles */
+.calculator-form {
+    margin-top: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+
+.button-group button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-permutasi {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-permutasi:hover {
+    background: #003a8c;
+    transform: translateY(-2px);
+}
+
+.btn-kombinasi {
+    background: var(--secondary);
+    color: white;
+}
+
+.btn-kombinasi:hover {
+    background: #e6a200;
+    transform: translateY(-2px);
+}
+
+.btn-reset {
+    background: #95a5a6;
+    color: white;
+}
+
+.btn-reset:hover {
+    background: #7f8c8d;
+    transform: translateY(-2px);
+}
+
+.hasil-container {
+    background: #f8f9fa;
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--primary);
+}
+
+.output-text {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.detail-text {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group button {
+        padding: 1rem;
+    }
+}
+
+.calculator-form {
+        margin-top: 1.5rem;
+    }
+
+    .input-group {
+        margin-bottom: 1.2rem;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e0e0e0;
+        border-radius: var(--radius);
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus {
+        outline: none;
+        border-color: var(--primary);
+    }
+
+    .button-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0.8rem;
+        margin: 1.5rem 0;
+    }
+
+    .button-group button {
+        padding: 0.8rem 1rem;
+        border: none;
+        border-radius: var(--radius);
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-permutasi {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-permutasi:hover {
+        background: #003a8c;
+        transform: translateY(-2px);
+    }
+
+    .btn-kombinasi {
+        background: var(--secondary);
+        color: white;
+    }
+
+    .btn-kombinasi:hover {
+        background: #e6a200;
+        transform: translateY(-2px);
+    }
+
+    .btn-reset {
+        background: #95a5a6;
+        color: white;
+    }
+
+    .btn-reset:hover {
+        background: #7f8c8d;
+        transform: translateY(-2px);
+    }
+
+    .hasil-container {
+        background: #f8f9fa;
+        border-radius: var(--radius);
+        padding: 1.2rem;
+        margin: 1rem 0;
+        border-left: 4px solid var(--primary);
+    }
+
+    .output-text {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        color: var(--text);
+    }
+
+    .detail-text {
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .button-group {
+            grid-template-columns: 1fr;
+        }
+        
+        .button-group button {
+            padding: 1rem;
+        }
+    }
