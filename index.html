@@ -204,7 +204,7 @@
   </div>
 
   <script>
-    // Fungsi untuk menghitung faktorial
+  
     function faktorial(n) {
         if (n < 0) return NaN;
         if (n === 0 || n === 1) return 1;
@@ -216,7 +216,6 @@
         return hasil;
     }
 
-    // Fungsi untuk menghitung permutasi
     function hitungPermutasi() {
         const n = parseInt(document.getElementById('n').value);
         const r = parseInt(document.getElementById('r').value);
@@ -247,7 +246,6 @@
             `Rumus: ${n}! / (${n} - ${r})! = ${faktN.toLocaleString()} / ${faktNR.toLocaleString()} = ${hasil.toLocaleString()}`;
     }
 
-    // Fungsi untuk menghitung kombinasi
     function hitungKombinasi() {
         const n = parseInt(document.getElementById('n').value);
         const r = parseInt(document.getElementById('r').value);
@@ -279,15 +277,13 @@
             `Rumus: ${n}! / (${r}! × (${n} - ${r})!) = ${faktN.toLocaleString()} / (${faktR.toLocaleString()} × ${faktNR.toLocaleString()}) = ${hasil.toLocaleString()}`;
     }
 
-    // Fungsi untuk reset kalkulator
     function resetKalkulator() {
         document.getElementById('n').value = '';
         document.getElementById('r').value = '';
         document.getElementById('output').innerHTML = '';
         document.getElementById('detail').innerHTML = '';
     }
-
-    // Event listener untuk tombol enter
+    
     document.addEventListener('DOMContentLoaded', function() {
         const inputs = document.querySelectorAll('input[type="number"]');
         inputs.forEach(input => {
@@ -307,3 +303,4 @@
   </main>
 </body>
 </html>
+
