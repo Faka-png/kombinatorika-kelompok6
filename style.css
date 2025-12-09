@@ -173,6 +173,19 @@ code, kbd {
     transition: all 0.3s ease;
 }
 
+.btn-video {
+  display:inline-block;
+  padding:10px 16px;
+  background:#166088;
+  color:#fff;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+}
+.btn-video:hover {
+  background:#0f4e6b;
+}
+
 .btn-permutasi {
     background: var(--primary);
     color: white;
