@@ -2,8 +2,17 @@
 <html lang="id">
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="iframe-body">
 
@@ -23,7 +32,8 @@
             <strong>Contoh Soal 1:</strong><br>
             Siswa diminta mengerjakan 4 dari 7 soal secara acak.<br>
             <strong>Jawab:</strong><br>
-            $$ C(7,4) = \frac{7!}{4!(7-4)!} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35 \text{ cara} $$
+            <div style="overflow-x: auto;"> $$ C(7,4) = \frac{7!}{4!(7-4)!} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35 \text{ cara} $$
+            </div>
         </div>
         
         <br>

@@ -2,23 +2,54 @@
 <html lang="id">
 <head>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="iframe-body">
+
     <div class="card">
-        <div class="section-badge">Materi</div>
-        <h3>Permutasi</h3>
-        <p>Permutasi adalah pengaturan urutan elemen dari sebuah himpunan.</p>
+        <span class="section-badge">Definisi</span>
+        <h3>Apa itu Permutasi?</h3>
+        <p>Permutasi adalah pengaturan elemen-elemen dari sebuah himpunan dengan memperhatikan <strong>urutan</strong>. Jika urutan berubah, maka dianggap susunan yang berbeda ($AB \neq BA$).</p>
+    </div>
+
+    <div class="card">
+        <h3>Jenis & Rumus Permutasi</h3>
         
-        <div class="sub-materi">
-            <h4>Rumus Dasar</h4>
-            <div class="formula-display">$$P(n, r) = \frac{n!}{(n-r)!}$$</div>
-            
-            <div class="example-box">
-                <b>Contoh:</b> Menyusun 5 bendera berbeda.<br>
-                <b>Jawab:</b> $5! = 120$ cara.
-            </div>
+        <h4>1. Permutasi dari n elemen berbeda</h4>
+        <p>Menyusun semua elemen yang tersedia.</p>
+        <div class="formula-box">
+            $$ P(n, n) = n! $$
+        </div>
+
+        <h4>2. Permutasi r dari n elemen ($r \leq n$)</h4>
+        <p>Digunakan untuk memilih ketua, sekretaris, bendahara, atau juara 1, 2, 3.</p>
+        <div class="formula-box">
+            $$ P(n, r) = \frac{n!}{(n-r)!} $$
+        </div>
+        
+        <div class="example-box">
+            <strong>Contoh Soal:</strong><br>
+            Memilih Ketua dan Wakil dari 5 orang.<br>
+            <strong>Jawab:</strong> $P(5,2) = \frac{5!}{(5-2)!} = 5 \times 4 = 20$ cara.
+        </div>
+
+        <br>
+        <h4>3. Permutasi Unsur Sama</h4>
+        <p>Digunakan untuk menyusun kata seperti "BASSABASSI".</p>
+        <div class="formula-box">
+            $$ P = \frac{n!}{k_1! \cdot k_2! \cdot ... \cdot k_t!} $$
         </div>
     </div>
+
 </body>
 </html>

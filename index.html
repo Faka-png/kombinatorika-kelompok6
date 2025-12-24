@@ -1,309 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Permutasi & Kombinasi — Kelompok 6</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="description" content="Ketepatan hasil perhitungan operasi permutasi dan kombinasi menggunakan alat bantu “Kalkulator Kombinatorika”" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matematika Diskrit - Kelompok 6</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Permutasi &amp; Kombinasi</h1>
-      <p class="lead">Ketepatan hasil perhitungan operasi permutasi dan kombinasi menggunakan alat bantu “Kalkulator Kombinatorika”</p>
-    </div>
-  </header>
 
-  <div class="divider">Permutasi</div>
-
-  <main class="container">
-    <div class="grid">
-
-      <main class="card">
-        <section>
-          <div class="section-title">Pengertian Permutasi</div>
-          <p class="muted">Permutasi adalah sebuah konsep dalam matematika dan
-            teori kombinatorial yang mengacu pada pengaturan ulang elemen-elemen
-            dari suatu himpunan dalam urutan tertentu. Dalam permutasi, penting 
-            untuk mengubah urutan elemen-elemen tersebut sehingga setiap pengaturan 
-            menghasilkan susunan yang berbeda.</p>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <div class="section-title">Jenis Permutasi</div>
-          <p><b>1. Permutasi dari n elemen tiap permutasi terdiri dari n elemen </b> </p>
-          <p>Jika ada unsur yang berbeda, diambil n unsur, maka banyaknya susunan (permutasi) yang berbeda dari n unsur tersebut adalah:</p>
-          <p><strong>Rumus:</strong> <code>P(n,n)=n! atau nPn =n!</code></p>
-          <p><strong>Contoh Soal:</strong></p>
-          <p>Untuk menyambut sebuah pertemuan delegasi negara yang dihadiri oleh lima negara, panitia akan memasang kelima bendera dari lima negara yang hadir. Banyak cara panitia menyusun kelima bendera tersebut adalah …</p>
-          <p><strong>Jawab:</strong></p>
-          <p>Dari lima bendera yang ada, berarti n = 5, maka banyak susunan bendera yang mungkin yaitu:
-              5! = 5.4.3.2.1 = <strong>120 cara.</strong></p>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <p><b>2. Permutasi n elemen, tiap permutasi terdiri dari r unsur dari n elemen dengan r ≤ n </b> </p>
-          <p>Untuk semua bilangan positif n dan r, dengan r ≤ n, banyaknya permutasi dari n objek yang diambil r objek pada satu waktu adalah:</p>
-          <p><strong>Rumus:</strong><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-          <script>
-          window.MathJax = {
-              tex: {
-                  inlineMath: [['$', '$'], ['\\(', '\\)']],
-                  displayMath: [['$$', '$$'], ['\\[', '\\]']]
-              }};
-          </script>
-          <p>
-          $$ P_{(n,r)} = {_n P_r} = P_r^n = \frac{n!}{(n-r)!} $$</p>
-          <p><strong>Contoh Soal:</strong></p>
-          <p>Banyak cara untuk memilih seorang ketua, sekertaris dan bendahara dari 8 siswa yang tersedia adalah…</p>
-          <p><strong>Jawab:</strong>
-          <br>Banyak siswa, n=8
-          <br>Ketua, sekretaris dan bendahara, r = 3
-          </p>
-          <div class="math-content">
-            \( P^8_3 = \dfrac{8!}{(8-3)!} = 
-            \dfrac{8 \times 7 \times 6 \times 5!}{5!} = \textbf{336 cara}\)
-    </div>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <p><b>3. Permutasi dari n unsur yang mengandung p.q dan r unsur yang sama</b> </p>
-          <p>Jika ada unsur yang berbeda, diambil n unsur, maka banyaknya susunan (permutasi) yang berbeda dari n unsur tersebut adalah:</p>
-          <p><strong>Rumus:</strong> <code>P<sub>(n, k₁, k₂, …, kₜ)</sub> = <sup>n!</sup>&frasl;<sub>k₁! × k₂! × … × kₜ!</sub></code></p>
-          <p>Keterangan:
-            <br>n   = banyaknya elemen seluruhnya
-            <br>k1  = banyaknya elemen kelompok 1 yang sama
-            <br>k2 = banyaknya elemen kelompok 2 yang sama
-            <br>kt  = banyaknya elemen kelompok kt yang sama t = 1,2,3,… </br>
-          </p>
-          <p><strong>Contoh soal: </strong></p>
-          <p>Banyak cara untuk menyusun dari kata ”BASSABASSI” adalah…</p>
-          <p><strong>Jawab:</strong>
-            <br>Banyakk huruf, n  = 10
-            <br>Huruf B, k1  = 2
-            <br>Huruf A, k2  = 3
-            <br>Huruf S, k3  = 4
-            <br>Huruf I, k4  = 1
-          </p>
-           <div class="math-content">
-          \( P_{(10,2,3,4,1)} 
-          = \dfrac{10!}{2! \cdot 3! \cdot 4! \cdot 1}
-          = \dfrac{10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4!}
-          {2 \cdot 1 \cdot 3 \cdot 2 \cdot 1 \cdot 4! \cdot 1}
-          = \textbf{12,600 cara.}\)
-    </div>
-        </section>
-      </main>
-
-    </div>
-  </main>
-
-  <div class="divider">Kombinasi</div>
-
-  <main class="container">
-    <div class="grid">
-
-      <main class="card">
-        <section>
-          <div class="section-title">Pengertian Kombinasi</div>
-          <p class="muted">Berbeda dengan permutasi, kombinasi merupakan sebuah konsep memilih 
-            suatu himpunan tanpa memperhatikan urutan pemilihannya.</p>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <div class="section-title">Rumus:</div>
-          <p class="muted">Lambang notasi kombinasi adalah C. Jumlah anggota himpunan disebut dengan (n) dan jumlah objek yang harus dipilih disebut (r). rumus kombinasi adalah:</p>
-          <p><code><sub>n</sub>C<sub>r</sub> = n! / ((n-r)! r!)</code></p>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <div class="section-title">Contoh Soal:</div>
-          <p>1. Terdapat himpunan huruf A,B,C,D. Akan dihitung susunan dengan dua huruf tanpa berurutan. Ada berapa banyak susunan dua huruf tersebut?</p>
-          <p><strong>Jawab:</strong></p>
-          <p>Dari soal tersebut, kita bisa menggabungkan dengan manual menjadi AB, AC, AD, BC, BD, CD. Namun jika menggunakan rumus.
-            <br>n = 4
-            <br>r = 2
-          </p>
-          <div class="math-content">
-          \({}^4C_2 = \dfrac{4!}{(4-2)! \cdot 2!} 
-          = \dfrac{4 \times 3 \times 2 \times 1}{2 \times 1 \times 2 \times 1} 
-          = \textbf{6 cara}\)
-          </div><br>
-          <p>2. Di suatu ujian, setiap siswa harus menjawab 4 dari 7 soal yang ada. Jika seorang siswa secara acak memilih soal untuk dikerjakan, berapa banyak cara atau pilihan soal yang bisa dikerjakan siswa itu?</p>
-          <p><strong>Jawab:</strong>
-          <br>n = 7
-          <br>r = 4
-          </p>
-          <div class="math-content">
-          \({}^7C_4 = \dfrac{7!}{(7-4)! \cdot 4!} 
-          = \dfrac{7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1}
-          {(3 \times 2 \times 1)(4 \times 3 \times 2 \times 1)} 
-          = \textbf{35 cara}\)
-    </div>
-        </section>
-      </main>
-
-      <main class="card">
-        <section>
-          <div class="section-title">Perbedaan Permutasi dan Kombinasi</div>
-          <p class="muted">Penerapan kombinasi dalam soal peluang biasanya untuk menentukan 
-            pemilihan tim atau kelompok, baju, mata pelajaran, makanan. Sedangkan permutasi 
-            biasanya pada soal untuk menyusun orang, nomor telepon, nomor rumah, angka, dan warna.</p>
-
-          <p class="muted">Dalam sebuah lomba, kombinasi digunakan untuk mengambil 3 pemenang secara acak. 
-            Sementara itu, permutasi menentukan pemenang dengan urutan juara 1,2, dan 3.</p>
-          
-          <p class="muted">kombinasi dalam soal peluang biasanya untuk menentukan pemilihan tim atau kelompok, baju, mata pelajaran, 
-            makanan. Sedangkan permutasi biasanya pada soal untuk menyusun orang, nomor telepon, nomor rumah, angka, dan warna. </p>
-
-          <p class="muted">Dalam sebuah lomba, kombinasi digunakan untuk mengambil 3 pemenang secara acak. Sementara itu, permutasi menentukan 
-            pemenang dengan urutan juara 1,2, dan 3.</p>
-        </section>
-      </main>
-      <div class="divider">kalkulator Kombinatorika</div>
-  <div class="container">
-    <div class="grid">
-      <main class="card">
-        <section>
-          <div class="calculator-form">
-            <div class="input-group">
-              <label for="n">Nilai n (total elemen):</label>
-              <input type="number" id="n" min="0" placeholder="Masukkan nilai n">
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">MENU UTAMA</div>
+            <nav class="nav-menu">
+                <a href="profil.html" target="content-frame" class="nav-item active" onclick="setActive(this, 'Profil Kelompok')">
+                    <i>👤</i> Profil
+                </a>
+                <a href="permutasi.html" target="content-frame" class="nav-item" onclick="setActive(this, 'Materi Permutasi')">
+                    <i>📚</i> Permutasi
+                </a>
+                <a href="kombinasi.html" target="content-frame" class="nav-item" onclick="setActive(this, 'Materi Kombinasi')">
+                    <i>✅</i> Kombinasi
+                </a>
+                <a href="kalkulator.html" target="content-frame" class="nav-item" onclick="setActive(this, 'Kalkulator')">
+                    <i>🧮</i> Kalkulator
+                </a>
+                <a href="video.html" target="content-frame" class="nav-item" onclick="setActive(this, 'Video Belajar')">
+                    <i>🎥</i> Video
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="bird" class="bird-img">
             </div>
+        </aside>
 
-            <div class="input-group">
-              <label for="r">Nilai r (elemen yang dipilih):</label>
-              <input type="number" id="r" min="0" placeholder="Masukkan nilai r">
-            </div>
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 id="page-title">Profil Anggota Kelompok</h2>
+            <ul style="margin-top: 10px; padding-left: 20px; color: #666; font-size: 14px;">
+            <li>Materi          : Permutasi & Kombinasi</li>
+            <li>Dosen Pengampu  : Indah Riezky Pratiwi , S.Pd., M.Pd.</li>
+            <li>Kelas           : 1 TRPL C</li>
+             </ul>
+            </header>
 
-            <div class="button-group">
-              <button type="button" onclick="hitungPermutasi()" class="btn-permutasi">Hitung Permutasi</button>
-              <button type="button" onclick="hitungKombinasi()" class="btn-kombinasi">Hitung Kombinasi</button>
-              <button type="button" onclick="resetKalkulator()" class="btn-reset">Reset</button>
-            </div>
-
-            <div id="hasil" class="hasil-container">
-              <div id="output" class="output-text"></div>
-              <div id="detail" class="detail-text"></div>
-            </div>
-          </div>
-        </section>
-      </main>
+            <iframe src="profil.html" name="content-frame" class="content-frame"></iframe>
+        </main>
     </div>
-  </div>
 
-  <script>
-    // Fungsi untuk menghitung faktorial
-    function faktorial(n) {
-        if (n < 0) return NaN;
-        if (n === 0 || n === 1) return 1;
-        
-        let hasil = 1;
-        for (let i = 2; i <= n; i++) {
-            hasil *= i;
-        }
-        return hasil;
-    }
-
-    // Fungsi untuk menghitung permutasi
-    function hitungPermutasi() {
-        const n = parseInt(document.getElementById('n').value);
-        const r = parseInt(document.getElementById('r').value);
-        
-        if (isNaN(n) || isNaN(r)) {
-            alert('Masukkan nilai n dan r yang valid!');
-            return;
-        }
-        
-        if (n < 0 || r < 0) {
-            alert('Nilai tidak boleh negatif!');
-            return;
-        }
-        
-        if (r > n) {
-            alert('Nilai r tidak boleh lebih besar dari n!');
-            return;
-        }
-        
-        const hasil = faktorial(n) / faktorial(n - r);
-        const faktN = faktorial(n);
-        const faktNR = faktorial(n - r);
-        
-        document.getElementById('output').innerHTML = 
-            `<strong>Permutasi P(${n}, ${r}) = <span style="color: #e74c3c">${hasil.toLocaleString()}</span></strong>`;
-        
-        document.getElementById('detail').innerHTML = 
-            `Rumus: ${n}! / (${n} - ${r})! = ${faktN.toLocaleString()} / ${faktNR.toLocaleString()} = ${hasil.toLocaleString()}`;
-    }
-
-    // Fungsi untuk menghitung kombinasi
-    function hitungKombinasi() {
-        const n = parseInt(document.getElementById('n').value);
-        const r = parseInt(document.getElementById('r').value);
-        
-        if (isNaN(n) || isNaN(r)) {
-            alert('Masukkan nilai n dan r yang valid!');
-            return;
-        }
-        
-        if (n < 0 || r < 0) {
-            alert('Nilai tidak boleh negatif!');
-            return;
-        }
-        
-        if (r > n) {
-            alert('Nilai r tidak boleh lebih besar dari n!');
-            return;
-        }
-        
-        const hasil = faktorial(n) / (faktorial(r) * faktorial(n - r));
-        const faktN = faktorial(n);
-        const faktR = faktorial(r);
-        const faktNR = faktorial(n - r);
-        
-        document.getElementById('output').innerHTML = 
-            `<strong>Kombinasi C(${n}, ${r}) = <span style="color: #27ae60">${hasil.toLocaleString()}</span></strong>`;
-        
-        document.getElementById('detail').innerHTML = 
-            `Rumus: ${n}! / (${r}! × (${n} - ${r})!) = ${faktN.toLocaleString()} / (${faktR.toLocaleString()} × ${faktNR.toLocaleString()}) = ${hasil.toLocaleString()}`;
-    }
-
-    // Fungsi untuk reset kalkulator
-    function resetKalkulator() {
-        document.getElementById('n').value = '';
-        document.getElementById('r').value = '';
-        document.getElementById('output').innerHTML = '';
-        document.getElementById('detail').innerHTML = '';
-    }
-
-    // Event listener untuk tombol enter
-    document.addEventListener('DOMContentLoaded', function() {
-        const inputs = document.querySelectorAll('input[type="number"]');
-        inputs.forEach(input => {
-            input.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    hitungPermutasi();
-                }
+    <script>
+        // Fungsi untuk mengubah warna menu yang aktif
+        function setActive(element, title) {
+            // Hapus class active dari semua menu
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
             });
-        });
-    });
-  </script>
-</body>
-</html>
-
-
-    </div>
-  </main>
+            // Tambahkan class active ke yang diklik
+            element.classList.add('active');
+            // Ubah judul di atas
+            document.getElementById('page-title').innerText = title;
+        }
+    </script>
 </body>
 </html>
