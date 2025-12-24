@@ -1,89 +1,26 @@
 function faktorial(n) {
-    if (n < 0) return NaN;
+    if (n < 0) return 0;
     if (n === 0 || n === 1) return 1;
-    
     let hasil = 1;
-    for (let i = 2; i <= n; i++) {
-        hasil *= i;
-    }
+    for (let i = 2; i <= n; i++) hasil *= i;
     return hasil;
-}zz
+}
 
-function hitungPermutasi() {
+function hitung(tipe) {
     const n = parseInt(document.getElementById('n').value);
     const r = parseInt(document.getElementById('r').value);
-    
-    if (isNaN(n) || isNaN(r)) {
-        alert('Masukkan nilai n dan r yang valid!');
-        return;
-    }
-    
-    if (n < 0 || r < 0) {
-        alert('Nilai tidak boleh negatif!');
-        return;
-    }
-    
-    if (r > n) {
-        alert('Nilai r tidak boleh lebih besar dari n!');
-        return;
-    }
-    
-    const hasil = faktorial(n) / faktorial(n - r);
-    const faktN = faktorial(n);
-    const faktNR = faktorial(n - r);
-    
-    document.getElementById('output').innerHTML = 
-        `<strong>Permutasi P(${n}, ${r}) = <span style="color: #e74c3c">${hasil.toLocaleString()}</span></strong>`;
-    
-    document.getElementById('detail').innerHTML = 
-        `Rumus: ${n}! / (${n} - ${r})! = ${faktN.toLocaleString()} / ${faktNR.toLocaleString()} = ${hasil.toLocaleString()}`;
-}
+    const display = document.getElementById('hasil-teks');
 
-function hitungKombinasi() {
-    const n = parseInt(document.getElementById('n').value);
-    const r = parseInt(document.getElementById('r').value);
-    
-    if (isNaN(n) || isNaN(r)) {
-        alert('Masukkan nilai n dan r yang valid!');
+    if (isNaN(n) || isNaN(r) || r > n) {
+        display.innerText = "Input tidak valid!";
         return;
     }
-    
-    if (n < 0 || r < 0) {
-        alert('Nilai tidak boleh negatif!');
-        return;
-    }
-    
-    if (r > n) {
-        alert('Nilai r tidak boleh lebih besar dari n!');
-        return;
-    }
-    
-    const hasil = faktorial(n) / (faktorial(r) * faktorial(n - r));
-    const faktN = faktorial(n);
-    const faktR = faktorial(r);
-    const faktNR = faktorial(n - r);
-    
-    document.getElementById('output').innerHTML = 
-        `<strong>Kombinasi C(${n}, ${r}) = <span style="color: #27ae60">${hasil.toLocaleString()}</span></strong>`;
-    
-    document.getElementById('detail').innerHTML = 
-        `Rumus: ${n}! / (${r}! × (${n} - ${r})!) = ${faktN.toLocaleString()} / (${faktR.toLocaleString()} × ${faktNR.toLocaleString()}) = ${hasil.toLocaleString()}`;
-}
 
-function resetKalkulator() {
-    document.getElementById('n').value = '';
-    document.getElementById('r').value = '';
-    document.getElementById('output').innerHTML = '';
-    document.getElementById('detail').innerHTML = '';
+    if (tipe === 'P') {
+        const hasil = faktorial(n) / faktorial(n - r);
+        display.innerHTML = `Hasil Permutasi P(${n},${r}) = <b>${hasil}</b>`;
+    } else {
+        const hasil = faktorial(n) / (faktorial(r) * faktorial(n - r));
+        display.innerHTML = `Hasil Kombinasi C(${n},${r}) = <b>${hasil}</b>`;
+    }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('input[type="number"]');
-    inputs.forEach(input => {
-        input.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                hitungPermutasi();
-            }
-        });
-    });
-});

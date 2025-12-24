@@ -15,45 +15,6 @@
     </div>
   </header>
 
- <div class="divider">Video Permutasi & Kombinasi</div>
-
-<main class="container">
-  <div class="grid">
-    <main class="card">
-      <section>
-        <div class="section-title">Video 1: Permutasi & Kombinasi</div>
-          <div class="video-wrapper">
-          <iframe width="100%" height="315" 
-            src="https://www.youtube.com/embed/gZmQNs0vLis"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <a href="https://www.youtube.com/watch?v=gZmQNs0vLis" target="_blank" class="btn-video">
-          Tonton Video di YouTube
-        </a>
-      </section>
-    </main>
-
-    <main class="card">
-      <section>
-        <div class="section-title">Video 1: Permutasi & Kombinasi</div>
-        <div class="video-wrapper">
-          <iframe width="100%" height="315" 
-            src="https://www.youtube.com/embed/unDfIvPxFKk"
-            title="Video Permutasi Kombinasi 2"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <a href="https://www.youtube.com/watch?v=unDfIvPxFKk" target="_blank" class="btn-video">
-          Tonton Video di YouTube
-        </a>
-      </section>
-    </main>
-  </div>
-</main>
-
   <div class="divider">Permutasi</div>
 
   <main class="container">
@@ -96,7 +57,8 @@
                   displayMath: [['$$', '$$'], ['\\[', '\\]']]
               }};
           </script>
-          <p>$$ P_{(n,r)} = {_n P_r} = P_r^n = \frac{n!}{(n-r)!} $$</p>
+          <p>
+          $$ P_{(n,r)} = {_n P_r} = P_r^n = \frac{n!}{(n-r)!} $$</p>
           <p><strong>Contoh Soal:</strong></p>
           <p>Banyak cara untuk memilih seorang ketua, sekertaris dan bendahara dari 8 siswa yang tersedia adalah…</p>
           <p><strong>Jawab:</strong>
@@ -241,6 +203,107 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Fungsi untuk menghitung faktorial
+    function faktorial(n) {
+        if (n < 0) return NaN;
+        if (n === 0 || n === 1) return 1;
+        
+        let hasil = 1;
+        for (let i = 2; i <= n; i++) {
+            hasil *= i;
+        }
+        return hasil;
+    }
+
+    // Fungsi untuk menghitung permutasi
+    function hitungPermutasi() {
+        const n = parseInt(document.getElementById('n').value);
+        const r = parseInt(document.getElementById('r').value);
+        
+        if (isNaN(n) || isNaN(r)) {
+            alert('Masukkan nilai n dan r yang valid!');
+            return;
+        }
+        
+        if (n < 0 || r < 0) {
+            alert('Nilai tidak boleh negatif!');
+            return;
+        }
+        
+        if (r > n) {
+            alert('Nilai r tidak boleh lebih besar dari n!');
+            return;
+        }
+        
+        const hasil = faktorial(n) / faktorial(n - r);
+        const faktN = faktorial(n);
+        const faktNR = faktorial(n - r);
+        
+        document.getElementById('output').innerHTML = 
+            `<strong>Permutasi P(${n}, ${r}) = <span style="color: #e74c3c">${hasil.toLocaleString()}</span></strong>`;
+        
+        document.getElementById('detail').innerHTML = 
+            `Rumus: ${n}! / (${n} - ${r})! = ${faktN.toLocaleString()} / ${faktNR.toLocaleString()} = ${hasil.toLocaleString()}`;
+    }
+
+    // Fungsi untuk menghitung kombinasi
+    function hitungKombinasi() {
+        const n = parseInt(document.getElementById('n').value);
+        const r = parseInt(document.getElementById('r').value);
+        
+        if (isNaN(n) || isNaN(r)) {
+            alert('Masukkan nilai n dan r yang valid!');
+            return;
+        }
+        
+        if (n < 0 || r < 0) {
+            alert('Nilai tidak boleh negatif!');
+            return;
+        }
+        
+        if (r > n) {
+            alert('Nilai r tidak boleh lebih besar dari n!');
+            return;
+        }
+        
+        const hasil = faktorial(n) / (faktorial(r) * faktorial(n - r));
+        const faktN = faktorial(n);
+        const faktR = faktorial(r);
+        const faktNR = faktorial(n - r);
+        
+        document.getElementById('output').innerHTML = 
+            `<strong>Kombinasi C(${n}, ${r}) = <span style="color: #27ae60">${hasil.toLocaleString()}</span></strong>`;
+        
+        document.getElementById('detail').innerHTML = 
+            `Rumus: ${n}! / (${r}! × (${n} - ${r})!) = ${faktN.toLocaleString()} / (${faktR.toLocaleString()} × ${faktNR.toLocaleString()}) = ${hasil.toLocaleString()}`;
+    }
+
+    // Fungsi untuk reset kalkulator
+    function resetKalkulator() {
+        document.getElementById('n').value = '';
+        document.getElementById('r').value = '';
+        document.getElementById('output').innerHTML = '';
+        document.getElementById('detail').innerHTML = '';
+    }
+
+    // Event listener untuk tombol enter
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    hitungPermutasi();
+                }
+            });
+        });
+    });
+  </script>
+</body>
+</html>
+
+
+    </div>
+  </main>
 </body>
 </html>

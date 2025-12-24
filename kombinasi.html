@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="iframe-body">
+
+    <div class="card">
+        <span class="section-badge" style="background: #ff7eb3;">Definisi</span>
+        <h3>Apa itu Kombinasi?</h3>
+        <p>Kombinasi adalah proses pemilihan elemen dari himpunan tanpa memperhatikan urutan. Pilihan $AB$ dianggap sama dengan $BA$.</p>
+    </div>
+
+    <div class="card">
+        <h3>Rumus Kombinasi</h3>
+        <div class="formula-box">
+            $$ C(n, r) = \frac{n!}{r!(n-r)!} $$
+        </div>
+
+        <div class="example-box">
+            <strong>Contoh Soal 1:</strong><br>
+            Siswa diminta mengerjakan 4 dari 7 soal secara acak.<br>
+            <strong>Jawab:</strong><br>
+            $$ C(7,4) = \frac{7!}{4!(7-4)!} = \frac{7 \times 6 \times 5}{3 \times 2 \times 1} = 35 \text{ cara} $$
+        </div>
+        
+        <br>
+        <div class="example-box">
+            <strong>Contoh Soal 2:</strong><br>
+            Memilih 2 warna cat dari 4 warna untuk dicampur.<br>
+            <strong>Jawab:</strong> $C(4,2) = 6$ cara.
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Perbedaan Utama</h3>
+        <table border="0" width="100%" style="margin-top: 10px; color: #555;">
+            <tr>
+                <td width="50%"><strong>Permutasi</strong></td>
+                <td><strong>Kombinasi</strong></td>
+            </tr>
+            <tr>
+                <td>Urutan PENTING (Posisi, Jabatan, Ranking)</td>
+                <td>Urutan TIDAK PENTING (Tim, Kelompok, Acak)</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
